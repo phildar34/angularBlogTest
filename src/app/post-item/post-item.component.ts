@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import {Post} from './post';
 
 @Component({
   selector: 'app-post-item',
@@ -7,10 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class PostItemComponent implements OnInit {
 
-  @Input() title;
-  @Input() content;
-  @Input() loveIts;
-  @Input() created_at;
+  @Input() post: Post;
 
   constructor() { }
 
@@ -18,11 +16,11 @@ export class PostItemComponent implements OnInit {
   }
 
   loveAdd() {
-    this.loveIts++;
+    this.post.loveIts++;
   }
 
   loveRemove() {
-    this.loveIts--;
+    this.post.loveIts--;
   }
 
 }

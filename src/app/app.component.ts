@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Post} from './post-item/post';
 
 @Component({
   selector: 'app-root',
@@ -11,24 +12,19 @@ export class AppComponent {
   posts;
 
   constructor() {
-    this.posts = [
-      {
-        title: 'Mon premier post',
-        content: 'Lorem ipsum',
-        loveIts: 0,
-        created_at: this.date1
-      },
-      {
-        title: 'Mon deuxieme post',
-        content: 'auront des boutons qui permettent d\'augmenter et de diminuer le nombre de loveIts',
-        loveIts: 0,
-        created_at: this.date1
-      },
-      {
-        title: 'Encore un post',
-        content: 'Lorem ipsum',
-        loveIts: 0,
-        created_at: this.date1
-      }];
+    const post1 = new Post('Mon premier post',
+      'Lorem ipsum',
+      0,
+      this.date1);
+    const post2 = new Post('Mon deuxième post',
+      'Lorem ipsum',
+      0,
+      this.date1);
+    const post3 = new Post('Mon dernier post',
+      'Lorem ipsum',
+      0,
+      this.date1);
+
+    this.posts = [post1, post2 , post3];
   }
 }
